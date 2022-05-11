@@ -78,7 +78,6 @@ color:white;}
 
 
 <ul>
-  <li><a href="login.jsp">Logout</a></li>
   <li><a href="#news">Table View</a></li>
   <li><a href="#contact">User Registration</a></li>
   <li style="float:left; margin-left:100px; color:white; font-size:45px;">Electro Grid</li>

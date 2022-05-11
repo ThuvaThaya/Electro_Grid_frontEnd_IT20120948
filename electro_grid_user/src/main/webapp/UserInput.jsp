@@ -72,7 +72,6 @@ color:white;}
 
 
 <ul>
-  <li><a href="login.jsp">Logout</a></li>
   <li><a href="#news">Table View</a></li>
   <li><a href="#contact">User Registration</a></li>
   <li style="float:left; margin-left:100px; color:white; font-size:45px;">Electro Grid</li>
@@ -140,33 +139,37 @@ color:white;}
 
 const url = new URL(window.location);
 const id = url.searchParams.get("id");
-$.ajax({
-    url: "http://localhost:8081/electro_grid_user/rest/users/get-user/"+id ,
-    type: 'GET',
-    dataType:'json',
-    success: function(response){
-    	
-    	console.log(response);
-    	const data = response[0];
-    	$('#fName').val(data.firstName);
-		  	$('#lName').val(data.lastName);
-		  	$('#emailId').val(data.email);
-		  	$('#pWord').val(data.password);
-		  	$('#cNum').val(data.phoneNo);
-		  	$('#Nic').val(data.nic);
-		  	$('#branchId').val(data.branchId);
-		  	
-		  	
-    	
-    },
-    error: function (request, message, error) {
-    	alert(error);
-        	console.log(request);
-    	console.log(message);
-    	console.log(error);
-    }
-    
-});
+if(id>0){
+	$.ajax({
+	    url: "http://localhost:8081/electro_grid_user/rest/users/get-user/"+id ,
+	    type: 'GET',
+	    dataType:'json',
+	    success: function(response){
+	    	
+	    	console.log(response);
+	    	const data = response[0];
+	    	$('#fName').val(data.firstName);
+			  	$('#lName').val(data.lastName);
+			  	$('#emailId').val(data.email);
+			  	$('#pWord').val(data.password);
+			  	$('#cNum').val(data.phoneNo);
+			  	$('#Nic').val(data.nic);
+			  	$('#branchId').val(data.branchId);
+			  	
+			  	
+	    	
+	    },
+	    error: function (request, message, error) {
+	    
+	    	alert(error);
+	        	console.log(request);
+	    	console.log(message);
+	    	console.log(error);
+	    }
+	    
+	});
+}
+
 
 function validateUserForm(){
 	if($("#fName").val().trim()=="")
