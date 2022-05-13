@@ -134,37 +134,6 @@ function deleteUser(id){
 	})
 }
 
-function updateUser(id){
-	console.log(id);
-	
-	//get
-	
-	window.location = "http://localhost:8081/electro_grid_user/UserInput.jsp?id="+id;
-    
-	
-	/* $.ajax({
-	url:'http://localhost:8081/electro_grid_user/rest/users/update-user/' +id,
-	type:'PUT',
-	 dataType:'json',
-	 data:JSON.stringify()
-	 success: function(data){
-		 $('#fname').val(data.firstName);
-		  $('#lName').val(data.lastName);
-		  $('#emailId').val(data.email);
-		  $('#pWord').val(data.password);
-		  $('#cNum').val(data.phoneNumber);
-		  $('#Nic').val(data.nic);
-		  $('#branchId').val(data.branchId);
-	 },
-	 error: function(request, message, error){
-		 $(".sample").append("<h1>failed to load </h1>");
-     	console.log(request);
-     	console.log(message);
-     	console.log(error);
-	 }
-	
-	}) */
-}
 
 
 
